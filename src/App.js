@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import BottomSheet from "./Components/BottomSheet";
+import { useState } from "react";
 
 function App() {
+  const [bottomSheetOpen, setBottomSheetOpen] = useState(false);
+
+  const handleOpenButtonClick = () => {
+    setBottomSheetOpen(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setBottomSheetOpen(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="btn">
+        <button onClick={handleOpenButtonClick}>Open Bottom Sheet</button>
+      </div>
+
+      {bottomSheetOpen && (
+        <BottomSheet onCloseButtonClick={handleCloseButtonClick} />
+      )}
     </div>
   );
 }

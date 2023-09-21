@@ -1,0 +1,52 @@
+.bottom-sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    background-color: #ffffff;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s ease;
+    z-index: 9999;
+
+  }
+  img{
+    width: 60px;
+  }
+  .handle {
+    width: 100%;
+    background-color: #ececec;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .cut{
+    position: absolute;
+    top: 0;
+    right:0;
+
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  
+  p {
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+
+  
+  
+  @media (max-width: 768px) {
+    .bottom-sheet {
+      bottom: 0;
+      height: 60vh;
+    }
+  }
